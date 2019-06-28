@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference
+            android:title="保持应用在前台"
+            android:defaultValue="true"
+            android:summaryOff="打开能在后台接收数据"
+            android:summaryOn="关闭后不能在后台接收数据"
+            android:key="@string/key_setting_using_foreground_service_keep_alive" />
+    <PreferenceCategory
+            app:isPreferenceVisible="false"
+            android:key="@string/key_account_category"
+        android:title="">
+        <Preference
+            android:key="@string/key_setting_account"
+            android:icon="@drawable/ic_add_black_24dp"
+            android:title="Sanlorng"
+            android:summary="186****9106" />
+        <Preference
+            android:key="@string/key_setting_exit_account"
+            android:summary="退出登录" />
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="关于">
+        <Preference
+                android:key="@string/key_setting_version_name"
+                android:persistent="false"
+                android:title="版本号"
+                android:summary="1.0.0" />
+        <Preference
+                android:key="@string/key_setting_sdk_version"
+                android:persistent="false"
+                android:title="@string/sdk_version"
+                android:summary="29" />
+        <Preference
+            android:key="@string/key_setting_check_update"
+            android:persistent="false"
+            android:title="检查更新"
+            android:summary="正在检查更新" />
+        <Preference
+            android:key="@string/key_setting_update_history"
+            android:persistent="false"
+            android:title="更新历史"
+            android:summary="" />
+    </PreferenceCategory>
+</PreferenceScreen>

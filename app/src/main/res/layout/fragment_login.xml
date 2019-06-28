@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.LoginFragment">
+    <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_horizon"
+            android:layout_marginEnd="@dimen/margin_horizon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+                app:tabIndicatorFullWidth="false"
+                android:id="@+id/tabSelectLoginOrRegister"
+            android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabSelectLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/login" />
+            <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabSelectRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/register" />
+        </com.google.android.material.tabs.TabLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutUserNameOrPhone"
+                app:errorEnabled="true"
+                android:layout_marginTop="@dimen/margin_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUsernameOrPassword"
+                    android:hint="@string/username_or_phone"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:maxLines="1"/>
+            <com.google.android.material.textfield.TextInputLayout
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true"
+                    android:id="@+id/layoutUserPassword"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:imeOptions="actionDone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+                android:layout_marginTop="@dimen/margin_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--                    android:text="注册"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginEnd="32dp" />-->
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/userLogin"
+                    android:text="@string/login"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">LANHome</string>
+    <string name="settings">设置</string>
+    <string name="open_drawer">打开抽屉</string>
+    <string name="close_drawer">关闭抽屉</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="key_setting_account" translatable="false">setting_account</string>
+    <string name="key_setting_exit_account" translatable="false">setting_exit_account</string>
+    <string name="key_setting_version_name" translatable="false">setting_version_name</string>
+    <string name="key_setting_check_update" translatable="false">setting_check_update</string>
+    <string name="key_setting_update_history" translatable="false">setting_update_history</string>
+    <string name="key_setting_sdk_version" translatable="false">setting_sdk_version</string>
+    <string name="sdk_version">SDK 版本</string>
+    <string name="username_or_phone">用户名/手机号</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="login_or_register">登录或注册</string>
+    <string name="update_log">
+        1. 账号登录/注册
+    </string>
+    <string name="key_account_category">accountCategory</string>
+    <string name="login_failed">登录失败</string>
+    <string name="login_success">登录成功</string>
+    <string name="please_type_username_or_phone">请填写用户名或手机号</string>
+    <string name="please_type_password">请填写密码</string>
+    <string name="username_or_phone_do_not_exist">用户名/手机号为空</string>
+    <string name="password_is_too_short">密码长度过短</string>
+    <string name="device_details">设备详情</string>
+    <string name="key_setting_using_foreground_service_keep_alive">setting_using_foreground_service_keep_alive</string>
+    <string name="foreground_service">前台服务</string>
+    <string name="guest_picture">访客图像</string>
+    <string name="app_update">应用更新</string>
+    <string name="about_us">关于我们</string>
 </resources>

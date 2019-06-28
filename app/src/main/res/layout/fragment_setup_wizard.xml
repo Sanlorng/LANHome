@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:background="?attr/colorPrimary"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragment.SetupWizardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="欢迎使用本应用\n现在，我们一起进行一些设置"/>
+    <com.google.android.material.button.MaterialButton
+            android:text="登录 / 注册"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/margin_vertical"
+            android:backgroundTint="?attr/colorOnPrimary"
+            android:textColor="?attr/colorPrimary"
+            android:id="@id/loginFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</FrameLayout>

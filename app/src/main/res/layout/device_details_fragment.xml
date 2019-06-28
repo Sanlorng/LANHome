@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragment.DeviceDetailsFragment">
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent" android:layout_height="match_parent" >
+        <LinearLayout
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/margin_vertical"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            <com.google.android.material.card.MaterialCardView
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="?attr/colorSurface"
+                    android:layout_margin="@dimen/margin_horizon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                        android:padding="16dp"
+                        android:background="@drawable/card_backgroud"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                            android:id="@+id/titleTextDeviceDetails"
+                            android:text="设备："
+                            style="@style/text_info_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_vertical" android:textStyle="bold"
+                            android:typeface="monospace"/>
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_vertical">
+                        <TextView
+                                android:id="@+id/tempDetails"
+                                android:text="温度："
+                                style="@style/text_info_card"/>
+                        <TextView
+                                android:id="@+id/humiDetails"
+                                android:text="湿度："
+                                style="@style/text_info_card"/>
+                        <TextView
+                                android:id="@+id/concenDetails"
+                                android:text="浓度："
+                                style="@style/text_info_card"/>
+                    </LinearLayout>
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+                        <com.google.android.material.button.MaterialButton
+                                style="@style/Widget.MaterialComponents.Button.TextButton"
+                                app:icon="@drawable/ic_videocam_black_24dp"
+                                android:id="@+id/previewVideoDeviceDetails"
+                                android:text="预览监控"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="?attr/colorSurface"
+                    android:layout_marginStart="@dimen/margin_horizon"
+                    android:layout_marginEnd="@dimen/margin_horizon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                <LinearLayout
+                        android:background="@drawable/card_backgroud"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            style="@style/text_info_card"
+                            android:text="控制面板"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:textStyle="bold" android:typeface="monospace"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/controlDoor"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:paddingStart="16dp"
+                            android:text="门"
+                            android:textSize="16sp"
+                            app:switchPadding="16dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:typeface="monospace" android:textStyle="bold"/>
+<!--                    <com.google.android.material.switchmaterial.SwitchMaterial-->
+<!--                            android:id="@+id/controlFan"-->
+<!--                            android:text="风扇"-->
+<!--                            android:paddingStart="16dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content" />-->
+                </LinearLayout>
+                    <com.ycz.lanhome.LevelView
+                            app:titleText="风扇：关"
+                            app:maxLevel="3"
+                            android:id="@+id/controlFanLevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    <com.ycz.lanhome.LevelView
+                            app:titleText="窗户：关"
+                            app:maxLevel="8"
+                            android:id="@+id/controlWindowLevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+
+                    android:layout_margin="@dimen/margin_horizon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                <LinearLayout
+                        android:background="@drawable/card_backgroud"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <com.google.android.material.tabs.TabLayout
+                            android:background="#00000000"
+                            android:id="@+id/tabPageAnalyze"
+                            android:layout_width="match_parent" android:layout_height="wrap_content">
+                    </com.google.android.material.tabs.TabLayout>
+                    <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewPagerAnalyze"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

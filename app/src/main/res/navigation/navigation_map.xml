@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation_map" app:startDestination="@id/shellFragment">
+
+
+    <fragment android:id="@+id/shellFragment" android:name="com.ycz.lanhome.fragment.ShellFragment"
+              android:label="fragment_shell" tools:layout="@layout/fragment_shell">
+        <action android:id="@+id/action_shellFragment_to_settingsFragment2" app:destination="@id/settingsFragment"/>
+    </fragment>
+    <fragment android:id="@+id/settingsFragment" android:name="com.ycz.lanhome.fragment.SettingsFragment"
+              android:label="@string/settings" tools:layout="@layout/settings_fragment"/>
+    <fragment android:id="@+id/setupWizardFragment" android:name="com.ycz.lanhome.fragment.SetupWizardFragment"
+              android:label="fragment_setup_wizard" tools:layout="@layout/fragment_setup_wizard">
+        <action android:id="@+id/action_setupWizardFragment_to_loginFragment" app:destination="@id/loginFragment"/>
+    </fragment>
+    <fragment android:id="@+id/loginFragment" android:name="com.ycz.lanhome.fragment.LoginFragment"
+              android:label="@string/login_or_register" tools:layout="@layout/fragment_login"/>
+    <fragment android:id="@+id/deviceDetailsFragment" android:name="com.ycz.lanhome.fragment.DeviceDetailsFragment"
+              android:label="@string/device_details" tools:layout="@layout/device_details_fragment"/>
+    <fragment android:id="@+id/videoFragment" android:name="com.ycz.lanhome.fragment.GuestPictureFragment"
+              android:label="@string/guest_picture" tools:layout="@layout/video_fragment"/>
+    <fragment android:id="@+id/updateFragment" android:name="com.ycz.lanhome.fragment.UpdateFragment"
+              android:label="@string/app_update" tools:layout="@layout/update_fragment"/>
+    <fragment android:id="@+id/aboutFragment" android:name="com.ycz.lanhome.fragment.AboutFragment"
+              android:label="@string/about_us" tools:layout="@layout/about_fragment"/>
+</navigation>
