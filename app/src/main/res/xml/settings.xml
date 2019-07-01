@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:app="http://schemas.android.com/apk/res-auto">
-    <SwitchPreference
-            android:title="保持应用在前台"
-            android:defaultValue="true"
-            android:summaryOff="打开能在后台接收数据"
-            android:summaryOn="关闭后不能在后台接收数据"
-            android:key="@string/key_setting_using_foreground_service_keep_alive" />
     <PreferenceCategory
             app:isPreferenceVisible="false"
             android:key="@string/key_account_category"
-        android:title="">
+            android:title="">
         <Preference
-            android:key="@string/key_setting_account"
-            android:icon="@drawable/ic_add_black_24dp"
-            android:title="Sanlorng"
-            android:summary="186****9106" />
+                android:key="@string/key_setting_account"
+                android:icon="@drawable/ic_add_black_24dp"
+                android:title="Sanlorng"
+                android:summary="186****9106" />
         <Preference
-            android:key="@string/key_setting_exit_account"
-            android:summary="退出登录" />
+                android:key="@string/key_setting_exit_account"
+                android:summary="退出登录" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/device" >
+        <ListPreference
+                app:key="@string/key_setting_sync_data"
+                android:title="数据同步"
+                android:defaultValue="1"
+                android:summary="@string/when_data_received"
+                android:entries="@array/sync_frequency"
+                android:entryValues="@array/sync_frequency_int" />
+        <SwitchPreference
+                android:key="@string/key_setting_receive_guest_notification"
+                android:title="接收访客提醒"
+                android:defaultValue="true"
+                android:summary="当有访客时，发出通知提醒" />
+        <SwitchPreference
+                android:title="保持应用在前台"
+                android:defaultValue="true"
+                android:summaryOff="打开能在后台接收数据"
+                android:summaryOn="关闭后不能在后台接收数据"
+                android:key="@string/key_setting_using_foreground_service_keep_alive" />
+
     </PreferenceCategory>
     <PreferenceCategory
-            android:title="关于">
+            android:title="应用">
         <Preference
                 android:key="@string/key_setting_version_name"
                 android:persistent="false"
@@ -42,5 +57,9 @@
             android:persistent="false"
             android:title="更新历史"
             android:summary="" />
+        <Preference
+            android:key="@string/ket_setting_about_us"
+            android:persistent="false"
+            android:title="@string/about_us" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -1,4 +1,4 @@
-package com.ycz.lanhome.fragment
+package com.ycz.lanhome.viewmodel
 
 import androidx.lifecycle.ViewModel
 

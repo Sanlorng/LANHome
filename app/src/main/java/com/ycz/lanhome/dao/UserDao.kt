@@ -11,10 +11,10 @@ interface UserDao {
     fun getAll(): List<User>
 
     @Query("SELECT * FROM user WHERE is_login = :login LIMIT 1")
-    fun findByIsLogin(login: Boolean):User
+    fun findByIsLogin(login: Boolean): User?
 
     @Query("SELECT * FROM user WHERE user_name LIKE :name OR phone_number LIKE :number")
-    fun findByUsernameOrPhoneNumber(name:String, number: String):List<User>
+    fun findByUsernameOrPhoneNumber(name: String, number: String): List<User>
 
     @Insert
     fun insertAll(vararg users: User)

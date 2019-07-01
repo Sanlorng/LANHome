@@ -1,7 +1,7 @@
-package com.ycz.lanhome.fragment
+package com.ycz.lanhome.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class UpdateViewModel : ViewModel() {
+class VideoStreamViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

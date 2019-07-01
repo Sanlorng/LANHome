@@ -13,7 +13,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.ycz.lanhome.BuildConfig
-import com.ycz.lanhome.Network.RestService
+import com.ycz.lanhome.network.RestService
 import com.ycz.lanhome.R
 import com.ycz.lanhome.ShellActivity
 import com.ycz.lanhome.model.RestResult
@@ -26,16 +26,19 @@ class AppUpdateService : Service() {
 
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.e("startCheckUpdate","true")
+        Log.e("startCheckUpdate", "true")
         val info = UpdateInfo(
             packageName = BuildConfig.APPLICATION_ID
         )
-        RestService.newestUpdate(info).enqueue(object :Callback<RestResult<UpdateInfo>> {
+        RestService.newestUpdate(info).enqueue(object : Callback<RestResult<UpdateInfo>> {
             override fun onFailure(call: Call<RestResult<UpdateInfo>>, t: Throwable) {
 
             }
 
-            override fun onResponse(call: Call<RestResult<UpdateInfo>>, response: Response<RestResult<UpdateInfo>>) {
+            override fun onResponse(
+                call: Call<RestResult<UpdateInfo>>,
+                response: Response<RestResult<UpdateInfo>>
+            ) {
                 if (response.body()?.code == 200) {
                     onUpdateCheckSuccess(response.body()?.data!!)
                 }
@@ -50,24 +53,45 @@ class AppUpdateService : Service() {
         updateInfo.apply {
             var currentCode = 0L
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P)
-                currentCode = packageManager.getPackageInfo(packageName, PackageManager.GET_CONFIGURATIONS).versionCode.toLong()
+                currentCode =
+                    packageManager.getPackageInfo(packageName, PackageManager.GET_CONFIGURATIONS)
+                        .versionCode.toLong()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
-                currentCode = packageManager.getPackageInfo(packageName, PackageManager.GET_CONFIGURATIONS).longVersionCode
+                currentCode =
+                    packageManager.getPackageInfo(packageName, PackageManager.GET_CONFIGURATIONS)
+                        .longVersionCode
             if (updateInfo.versionCode.toLong() > currentCode) {
                 val builder = NotificationCompat.Builder(this@AppUpdateService, "1")
                     .setSmallIcon(R.drawable.ic_update_black_24dp)
                     .setContentTitle("检查到新版本")
                     .setContentText("版本号：$versionName")
-                    .setStyle(NotificationCompat.BigTextStyle()
-                        .bigText("版本号：$versionName\n$changelog"))
+                    .setStyle(
+                        NotificationCompat.BigTextStyle()
+                            .bigText("版本号：$versionName\n$changelog")
+                    )
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
-                    .setContentIntent(PendingIntent.getActivity(this@AppUpdateService, 0, Intent(this@AppUpdateService, ShellActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    }, PendingIntent.FLAG_UPDATE_CURRENT)).addAction(
-                        NotificationCompat.Action.Builder(R.drawable.ic_file_download_black_24dp, "立即下载",
-                            PendingIntent.getActivity(this@AppUpdateService, 0, Intent(this@AppUpdateService, ShellActivity::class.java).apply {
-                                putExtra(AppConfig.KEY_NAVIGATE_ID,R.id.updateFragment)
-                            }, PendingIntent.FLAG_UPDATE_CURRENT)).build()
+                    .setContentIntent(
+                        PendingIntent.getActivity(
+                            this@AppUpdateService,
+                            0,
+                            Intent(this@AppUpdateService, ShellActivity::class.java).apply {
+                                flags =
+                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            },
+                            PendingIntent.FLAG_UPDATE_CURRENT
+                        )
+                    ).addAction(
+                        NotificationCompat.Action.Builder(R.drawable.ic_file_download_black_24dp,
+                            "立即下载",
+                            PendingIntent.getActivity(
+                                this@AppUpdateService,
+                                0,
+                                Intent(this@AppUpdateService, ShellActivity::class.java).apply {
+                                    putExtra(AppConfig.KEY_NAVIGATE_ID, R.id.updateFragment)
+                                },
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                            )
+                        ).build()
                     )
                 this@AppUpdateService.createNotificationChannel()
                 with(NotificationManagerCompat.from(this@AppUpdateService)) {
@@ -80,6 +104,7 @@ class AppUpdateService : Service() {
     override fun onDestroy() {
         super.onDestroy()
     }
+
     override fun onBind(intent: Intent?): IBinder? {
         return Binder()
     }

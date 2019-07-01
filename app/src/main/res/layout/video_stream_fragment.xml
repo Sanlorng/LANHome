@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.GuestPictureFragment">
+        tools:context=".fragment.VideoStreamFragment">
 
-    <ImageView
-            android:id="@+id/videoPreview"
+    <com.ywl5320.wlmedia.widget.WlSurfaceView
+            android:id="@+id/videoSee"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

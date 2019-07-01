@@ -2,4 +2,6 @@
 <resources>
     <dimen name="margin_horizon">32dp</dimen>
     <dimen name="margin_vertical">32dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_corner">8dp</dimen>
 </resources>

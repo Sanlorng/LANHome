@@ -13,7 +13,7 @@
     <string name="key_setting_update_history" translatable="false">setting_update_history</string>
     <string name="key_setting_sdk_version" translatable="false">setting_sdk_version</string>
     <string name="sdk_version">SDK 版本</string>
-    <string name="username_or_phone">用户名/手机号</string>
+    <string name="username_or_phone">用户名</string>
     <string name="password">密码</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
@@ -24,9 +24,9 @@
     <string name="key_account_category">accountCategory</string>
     <string name="login_failed">登录失败</string>
     <string name="login_success">登录成功</string>
-    <string name="please_type_username_or_phone">请填写用户名或手机号</string>
+    <string name="please_type_username_or_phone">请填写用户名</string>
     <string name="please_type_password">请填写密码</string>
-    <string name="username_or_phone_do_not_exist">用户名/手机号为空</string>
+    <string name="username_or_phone_do_not_exist">用户名为空</string>
     <string name="password_is_too_short">密码长度过短</string>
     <string name="device_details">设备详情</string>
     <string name="key_setting_using_foreground_service_keep_alive">setting_using_foreground_service_keep_alive</string>
@@ -34,4 +34,39 @@
     <string name="guest_picture">访客图像</string>
     <string name="app_update">应用更新</string>
     <string name="about_us">关于我们</string>
+    <string name="ket_setting_about_us">setting_about_us</string>
+    <string name="signature">签名</string>
+    <string name="phoneNumber">手机号</string>
+    <string name="user_avatar">用户头像</string>
+    <string name="ok">确定</string>
+    <string name="add_picture">添加图片</string>
+    <string name="nick">昵称</string>
+    <string name="gender">性别</string>
+    <string name="device">设备</string>
+    <string name="manual">手动</string>
+    <string name="when_data_received">当数据接收到时</string>
+    <string name="each_one_hour">每一小时</string>
+    <string name="each_half_hour">每半小时</string>
+    <string name="each_fifteen_minutes">每十五分钟</string>
+    <string name="key_setting_sync_data">setting_sync_data</string>
+    <string name="key_setting_receive_guest_notification">setting_receive_guest_notification</string>
+    <string name="input_not_a_ip_address">输入的不是ip地址</string>
+    <string name="add">添加</string>
+    <string name="manumal_add_device">手动添加设备</string>
+    <string name="val_device">设备：%s</string>
+    <string name="val_address">地址：%s</string>
+    <string-array name="sync_frequency">
+<!--        <item>@string/manual</item>-->
+        <item>@string/when_data_received</item>
+<!--        <item>@string/each_fifteen_minutes</item>-->
+<!--        <item>@string/each_half_hour</item>-->
+<!--        <item>@string/each_one_hour</item>-->
+    </string-array>
+    <string-array name="sync_frequency_int">
+<!--        <item>0</item>-->
+        <item>1</item>
+<!--        <item>2</item>-->
+<!--        <item>3</item>-->
+<!--        <item>4</item>-->
+    </string-array>
 </resources>

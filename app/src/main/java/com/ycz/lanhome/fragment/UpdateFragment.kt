@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.ycz.lanhome.R
+import com.ycz.lanhome.viewmodel.UpdateViewModel
 
 class UpdateFragment : Fragment() {
 

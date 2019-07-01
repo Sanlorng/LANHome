@@ -14,8 +14,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
             <com.google.android.material.card.MaterialCardView
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
+                    app:cardElevation="@dimen/card_elevation"
+                    app:cardCornerRadius="@dimen/card_corner"
                     app:cardBackgroundColor="?attr/colorSurface"
                     android:layout_margin="@dimen/margin_horizon"
                     android:layout_width="match_parent"
@@ -31,8 +31,17 @@
                             android:text="设备："
                             style="@style/text_info_card"
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:textStyle="bold"
+                            android:typeface="monospace"/>
+                    <TextView
+                            android:id="@+id/subTitleTextDeviceDetails"
+                            android:text="地址："
+                            android:textSize="16sp"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/margin_vertical" android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/margin_vertical"
                             android:typeface="monospace"/>
                     <LinearLayout
                             android:orientation="horizontal"
@@ -49,7 +58,7 @@
                                 style="@style/text_info_card"/>
                         <TextView
                                 android:id="@+id/concenDetails"
-                                android:text="浓度："
+                                android:text="指数："
                                 style="@style/text_info_card"/>
                     </LinearLayout>
                     <LinearLayout
@@ -59,16 +68,25 @@
                         <com.google.android.material.button.MaterialButton
                                 style="@style/Widget.MaterialComponents.Button.TextButton"
                                 app:icon="@drawable/ic_videocam_black_24dp"
+                                android:id="@+id/previewImageDeviceDetails"
+                                android:text="预览图片"
+                                android:visibility="gone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        <com.google.android.material.button.MaterialButton
+                                style="@style/Widget.MaterialComponents.Button.TextButton"
+                                app:icon="@drawable/ic_videocam_black_24dp"
                                 android:id="@+id/previewVideoDeviceDetails"
                                 android:text="预览监控"
+                                android:visibility="gone"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="2dp"
+                    app:cardCornerRadius="@dimen/card_corner"
+                    app:cardElevation="@dimen/card_elevation"
                     app:cardBackgroundColor="?attr/colorSurface"
                     android:layout_marginStart="@dimen/margin_horizon"
                     android:layout_marginEnd="@dimen/margin_horizon"
@@ -123,12 +141,12 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-
+                    app:cardCornerRadius="@dimen/card_corner"
+                    app:cardElevation="@dimen/card_elevation"
                     android:layout_margin="@dimen/margin_horizon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" >
                 <LinearLayout
-                        android:background="@drawable/card_backgroud"
                         android:orientation="vertical"
                         android:layout_width="match_parent" android:layout_height="wrap_content">
                     <com.google.android.material.tabs.TabLayout
@@ -137,9 +155,10 @@
                             android:layout_width="match_parent" android:layout_height="wrap_content">
                     </com.google.android.material.tabs.TabLayout>
                     <androidx.viewpager2.widget.ViewPager2
+                            android:layout_marginTop="16dp"
                             android:id="@+id/viewPagerAnalyze"
                             android:layout_width="match_parent"
-                            android:layout_height="160dp" />
+                            android:layout_height="200dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

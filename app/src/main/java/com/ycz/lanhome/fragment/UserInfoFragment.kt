@@ -6,29 +6,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 
 import com.ycz.lanhome.R
-import com.ycz.lanhome.viewmodel.AboutViewModel
+import com.ycz.lanhome.viewmodel.UserInfoViewModel
 
-class AboutFragment : Fragment() {
+class UserInfoFragment : Fragment() {
 
     companion object {
-        fun newInstance() = AboutFragment()
+        fun newInstance() = UserInfoFragment()
     }
 
-    private lateinit var viewModel: AboutViewModel
+    private lateinit var viewModel: UserInfoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.about_fragment, container, false)
+        return inflater.inflate(R.layout.user_info_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(AboutViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProviders.of(this).get(UserInfoViewModel::class.java)
+        viewModel.updateStates.observe(this, Observer {
+            if (it.code == 200) {
+
+            }
+        })
+
+
     }
 
 }

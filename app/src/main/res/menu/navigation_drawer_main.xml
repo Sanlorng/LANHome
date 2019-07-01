@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item android:title="个人">-->
+<!--        <menu>-->
+<!--            <item-->
+<!--                    android:id="@id/userInfoFragment"-->
+<!--                    android:title="个人信息" />-->
+<!--        </menu>-->
+<!--    </item>-->
+<!--    <item android:title="我的设备"-->
+<!--            android:icon="@drawable/ic_device_hub_black_24dp"/>-->
+<!--    <item android:title="同步"-->
+<!--        android:icon="@drawable/ic_sync_black_24dp" />-->
     <item
             android:id="@id/settingsFragment"
             android:icon="@drawable/ic_outline_settings_24px"

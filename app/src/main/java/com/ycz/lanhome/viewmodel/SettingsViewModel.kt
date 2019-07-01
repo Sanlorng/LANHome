@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ycz.lanhome.BuildConfig
-import com.ycz.lanhome.Network.RestService
+import com.ycz.lanhome.network.RestService
 import com.ycz.lanhome.model.RestResult
 import com.ycz.lanhome.model.UpdateInfo
 import kotlinx.coroutines.launch
@@ -21,10 +21,11 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
         viewModelScope.launch {
             RestService.newestUpdate(
                 UpdateInfo(
-                packageName = BuildConfig.APPLICATION_ID
-            )).enqueue(object : Callback<RestResult<UpdateInfo>> {
+                    packageName = BuildConfig.APPLICATION_ID
+                )
+            ).enqueue(object : Callback<RestResult<UpdateInfo>> {
                 override fun onFailure(call: Call<RestResult<UpdateInfo>>, t: Throwable) {
-                    updateState.postValue(RestResult.failed(t.message?:""))
+                    updateState.postValue(RestResult.failed(t.message ?: ""))
                 }
 
                 override fun onResponse(
@@ -35,8 +36,8 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
                     if (info?.code == 200) {
                         updateState.postValue(RestResult.success(""))
                         updateInfo.postValue(info.data)
-                    }else {
-                        updateState.postValue(RestResult.failed((info?.code?:-1).toString()))
+                    } else {
+                        updateState.postValue(RestResult.failed((info?.code ?: -1).toString()))
                     }
                 }
             })

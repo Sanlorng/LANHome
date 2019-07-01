@@ -12,14 +12,14 @@ import com.ycz.lanhome.app.AppConfig
 import com.ycz.lanhome.viewmodel.ShellViewModel
 import kotlinx.android.synthetic.main.activity_shell.*
 
-class ShellActivity : AppCompatActivity(),Shell {
+class ShellActivity : AppCompatActivity(), Shell {
     lateinit var navController: NavController
     lateinit var shellViewModel: ShellViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shell)
         shellViewModel = ViewModelProviders.of(this)[ShellViewModel::class.java]
-        shellViewModel.canFinish.postValue(intent.getBooleanExtra("canFinish",true))
+        shellViewModel.canFinish.postValue(intent.getBooleanExtra("canFinish", true))
         window.translucentSystemUI(true)
         navController = findNavController(R.id.containerShell)
 //        navController.setGraph(R.navigation.navigation_map)
@@ -29,19 +29,26 @@ class ShellActivity : AppCompatActivity(),Shell {
             finish()
         }
         setupActionBarWithNavController(navController, AppBarConfiguration(navController.graph))
-        val navigateId = intent.getIntExtra("navigateId",R.id.shellFragment)
+        val navigateId = intent.getIntExtra("navigateId", R.id.shellFragment)
         val bundle = Bundle()
-        bundle.putString(AppConfig.KEY_DEVICE_ADDRESS,intent.getStringExtra(AppConfig.KEY_DEVICE_ADDRESS))
-        bundle.putString(AppConfig.KEY_DEVICE_NAME,intent.getStringExtra(AppConfig.KEY_DEVICE_NAME))
-        bundle.putString(AppConfig.KEY_DEVICE_MAC,intent.getStringExtra(AppConfig.KEY_DEVICE_MAC))
-        when(navigateId) {
+        bundle.putString(
+            AppConfig.KEY_DEVICE_ADDRESS,
+            intent.getStringExtra(AppConfig.KEY_DEVICE_ADDRESS)
+        )
+        bundle.putString(
+            AppConfig.KEY_DEVICE_NAME,
+            intent.getStringExtra(AppConfig.KEY_DEVICE_NAME)
+        )
+        bundle.putString(AppConfig.KEY_DEVICE_MAC, intent.getStringExtra(AppConfig.KEY_DEVICE_MAC))
+        bundle.putString(AppConfig.KEY_GET_TYPE, intent.getStringExtra(AppConfig.KEY_GET_TYPE))
+        when (navigateId) {
             R.id.setupWizardFragment -> {
                 toolbarShell.isVisible = false
                 supportActionBar?.setDisplayHomeAsUpEnabled(false)
             }
 
         }
-        navController.navigate(navigateId,bundle)
+        navController.navigate(navigateId, bundle)
 //        navController.addOnDestinationChangedListener { controller, destination, arguments ->
 //            val isSetupWizard = destination.id == R.id.setupWizardFragment
 //            toolbarShell.isVisible = isSetupWizard.not()

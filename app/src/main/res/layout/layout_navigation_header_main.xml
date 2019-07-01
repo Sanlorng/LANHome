@@ -4,20 +4,24 @@
                                                    android:orientation="vertical"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="120dp">
-    <ImageView
-            app:layout_constraintStart_toStartOf="parent"
+
+    <TextView
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/avatarDrawer"
-            android:layout_marginStart="@dimen/margin_horizon"
-            android:layout_width="?attr/actionBarSize"
-            android:layout_height="?attr/actionBarSize" />
-    <TextView
-            app:layout_constraintStart_toEndOf="@id/avatarDrawer"
-            app:layout_constraintTop_toTopOf="@id/avatarDrawer"
-            app:layout_constraintBottom_toBottomOf="@id/avatarDrawer"
+            app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/userNameDrawer"
             android:layout_marginStart="@dimen/margin_horizon"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/userNameDrawer"
+            app:layout_constraintBottom_toBottomOf="@id/userNameDrawer"
+            android:layout_marginEnd="@dimen/margin_horizon"
+            android:id="@+id/loginButton"
+            android:text="登录/注册"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>

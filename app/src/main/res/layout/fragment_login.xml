@@ -40,6 +40,7 @@
                     android:id="@+id/editTextUsernameOrPassword"
                     android:hint="@string/username_or_phone"
                     android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:inputType="text"
                     android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

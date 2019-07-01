@@ -18,10 +18,17 @@
               android:label="@string/login_or_register" tools:layout="@layout/fragment_login"/>
     <fragment android:id="@+id/deviceDetailsFragment" android:name="com.ycz.lanhome.fragment.DeviceDetailsFragment"
               android:label="@string/device_details" tools:layout="@layout/device_details_fragment"/>
-    <fragment android:id="@+id/videoFragment" android:name="com.ycz.lanhome.fragment.GuestPictureFragment"
-              android:label="@string/guest_picture" tools:layout="@layout/video_fragment"/>
+    <fragment android:id="@+id/guestPictureFragment" android:name="com.ycz.lanhome.fragment.GuestPictureFragment"
+              android:label="@string/guest_picture" tools:layout="@layout/guest_picture_fragment"/>
     <fragment android:id="@+id/updateFragment" android:name="com.ycz.lanhome.fragment.UpdateFragment"
               android:label="@string/app_update" tools:layout="@layout/update_fragment"/>
     <fragment android:id="@+id/aboutFragment" android:name="com.ycz.lanhome.fragment.AboutFragment"
               android:label="@string/about_us" tools:layout="@layout/about_fragment"/>
+    <fragment android:id="@+id/userInfoFragment" android:name="com.ycz.lanhome.fragment.UserInfoFragment"
+              android:label="UserInfoFragment"/>
+    <fragment
+            android:id="@+id/videoStreamFragment"
+            android:name="com.ycz.lanhome.fragment.VideoStreamFragment"
+            android:label="video_stream_fragment"
+            tools:layout="@layout/video_stream_fragment" />
 </navigation>
