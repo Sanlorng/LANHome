@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.AboutFragment">
+
+    <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <ImageView
+                android:src="@drawable/ic_device_hub_black_24dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/app_name"
+                android:padding="@dimen/margin_vertical"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="成员：杨立峰，陈甫佳，翟柏雯"
+                android:padding="@dimen/margin_vertical"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</FrameLayout>
